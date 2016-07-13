@@ -1,0 +1,76 @@
+<ons-navigator page="search.html" var="app.navi"></ons-navigator>
+<ons-template id="search.html">
+  <ons-page id="search-page">
+  	<div class="inTop">
+  		<input type="text"></input>
+  	</div>
+  	<ons-scroller style="width: 100%">
+    <ons-list>
+		<ons-list-item modifier="chevron" class="item" ng-repeat="ins in instructors" ng-click="insInfo(ins.id)">
+			<ons-row class="pad10">
+				<ons-col width="60px"> 
+					<img class="item-thum" src="{{ins.image_main}}">
+				</ons-col>
+				<ons-col>
+					<span class="homedis">{{ins.name}}</span><br>
+					<span class="homedis">Ratings: {{ins.rating}} &nbsp;&nbsp;Lessons: {{ins.lessons}}</span><br>
+					<span class=" homedis glyphicon glyphicon-hand-right"><small> {{ins.goods}}</small></span>
+				</ons-col>
+			</ons-row>                          
+		</ons-list-item>
+	</ons-list>
+	</ons-scroller>
+  </ons-page>
+</ons-template>
+
+
+<ons-template id="detail.html">
+    <ons-page id="detail-page">
+      	<ons-toolbar>
+	        <div class="left"><ons-back-button>Back</ons-back-button></div>
+	        <div class="center">Details</div>
+    	</ons-toolbar>
+    	<div class="video-detail">{{teacherInfo.youtube_tag}}</div>
+    		
+    	<ons-list>
+			<ons-list-item class="item">
+				<ons-row class="pad10 white">
+					<ons-col width="60px"> 
+						<img class="item-thum">
+					</ons-col>
+					<ons-col>
+						<span class="homedis">{{teacherInfo.name}}</span><br>
+						<span class="homedis">Ratings: {{teacherInfo.rating}} &nbsp;&nbsp;Lessons: {{teacherInfo.lessons}}</span>
+						<span class=" homedis glyphicon glyphicon-hand-right"> {{teacherInfo.goods}}</span>
+					</ons-col>
+				</ons-row>                          
+			
+				<ons-row class="pad10 white">
+					<ons-col>
+						<span class="homedis">The quick brown fox</span>
+						<span class="homedis">This is the message</span>
+						<span class="homedis">My very eager mary</span>
+						<span class="homedis">Your content here</span>
+						<div class="readmore">READ MORE</div>
+					</ons-col>
+				</ons-row>
+
+				<ons-row class="item center">
+					<ons-col>
+						<ons-button modifier="normal--cta" class="btnOrange">RESERVE LESSON</ons-button>
+						<ons-button modifier="normal--cta" class="btnBG">SCHEDULE</ons-button>
+					</ons-col>
+				</ons-row>
+				<ons-row class="pad10 white">
+					<ons-col>
+						<span class="homedis">Rate 1</span>
+						<span class="homedis">Rate 2</span>
+						<span class="homedis">Rate 3</span>
+						<span class="homedis">Rate 4</span>
+						<span class="homedis">Rate 5</span>
+					</ons-col>
+				</ons-row>
+		</ons-list>
+			
+    </ons-page>
+</ons-template>

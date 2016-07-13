@@ -1,0 +1,122 @@
+<ons-navigator page="list.html" var="app.navi"></ons-navigator>
+<ons-template id="list.html">
+  <ons-page id="list-page">
+    <ons-toolbar>
+      <div class="center">
+      	<ons-button modifier="normal--cta" ng-click="getLesson()">Lesson</ons-button>
+      	<ons-button modifier="normal--cta" ng-click="getMemo()">Memos</ons-button>
+      	<ons-button modifier="normal--cta" ng-click="getFavorite()">Favorite</ons-button>
+      </div>
+    </ons-toolbar>
+
+    <ons-list ng-show="lessonList">
+		<ons-list-item modifier="chevron" class="item" ng-repeat="lesson in lessons" ng-click="lessonDetail()">
+			<ons-row class="pad10">
+				<ons-col width="60px"> 
+					<img class="item-thum" src="{{lesson.teacher_image}}">
+				</ons-col>
+				<ons-col>
+					<span class="homedis">{{lesson.teacher_name}}</span>
+					<span class="homedis fright">{{lesson.created_date}}</span>
+					<span class="homedis">{{lesson.todays_lesson}}</span><br>
+					<span class=" homedis glyphicon glyphicon-hand-right"><small> {{ins.goods}}</small></span>
+				</ons-col>
+			</ons-row>                          
+		</ons-list-item>
+	</ons-list>
+
+	<ons-list ng-show="memoList">
+		<div class="inTop">
+	  		<input type="text"></input>
+	  	</div>
+		<ons-list-item modifier="chevron" class="item" ng-click="memoDetail()">
+			<ons-row class="pad10">
+				<ons-col>
+					<span class="homedis">test</span>
+				</ons-col>
+			</ons-row>                          
+		</ons-list-item>
+	</ons-list>
+
+	<ons-list ng-show="favoriteList">
+		<ons-list-item modifier="chevron" class="item" ng-click="favoriteDetail()">
+			<ons-row class="pad10">
+				<ons-col>
+					<span class="homedis">fav</span>
+				</ons-col>
+			</ons-row>                          
+		</ons-list-item>
+	</ons-list>
+
+  </ons-page>
+</ons-template>
+
+
+<ons-template id="lessonDetail.html">
+    <ons-page id="lessonDetail-page">
+      	<ons-toolbar>
+	        <div class="left"><ons-back-button>Back</ons-back-button></div>
+	        <div class="center">Lesson Details</div>
+    	</ons-toolbar>
+    	
+    	<ons-list>
+			<ons-list-item class="item">
+				<ons-row class="pad10 white">
+					<ons-col width="60px"> 
+						<img class="item-thum">
+					</ons-col>
+					<ons-col>
+						<span class="homedis">Test</span><br>
+						<span class="homedis">test 123</span>
+					</ons-col>
+				</ons-row>  
+		</ons-list>
+			
+    </ons-page>
+</ons-template>
+
+<ons-template id="memoDetail.html">
+    <ons-page id="memoDetail-page">
+      	<ons-toolbar>
+	        <div class="left"><ons-back-button>Back</ons-back-button></div>
+	        <div class="center">Memo Details</div>
+    	</ons-toolbar>
+    	
+    	<ons-list>
+			<ons-list-item class="item">
+				<ons-row class="pad10 white">
+					<ons-col width="60px"> 
+						<img class="item-thum">
+					</ons-col>
+					<ons-col>
+						<span class="homedis">Test</span><br>
+						<span class="homedis">test 123</span>
+					</ons-col>
+				</ons-row>  
+		</ons-list>
+			
+    </ons-page>
+</ons-template>
+
+<ons-template id="favoriteDetail.html">
+    <ons-page id="favoriteDetail-page">
+      	<ons-toolbar>
+	        <div class="left"><ons-back-button>Back</ons-back-button></div>
+	        <div class="center">Favorite Details</div>
+    	</ons-toolbar>
+    	
+    	<ons-list>
+			<ons-list-item class="item">
+				<ons-row class="pad10 white">
+					<ons-col width="60px"> 
+						<img class="item-thum">
+					</ons-col>
+					<ons-col>
+						<span class="homedis">Test</span><br>
+						<span class="homedis">test 123</span>
+					</ons-col>
+				</ons-row>  
+		</ons-list>
+			
+    </ons-page>
+</ons-template>
